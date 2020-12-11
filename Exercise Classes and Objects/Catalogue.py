@@ -8,10 +8,10 @@ class Catalogue():
         return self.products.append(product)
 
     def get_by_letter(self, first_letter):
-        return [item for item in self.products if item[0] == first_letter]
+        return [item for item in self.products if item.startswith(first_letter)]
 
     def __repr__(self):
-        return "".join("Items in the {} catalogue: \n".format(self.name)) + "\n".join(x for x in sorted(self.products))
+        return f"Items in the {self.name} catalogue: \n" + "\n".join(sorted(self.products))
 
 
 catalogue = Catalogue("Furniture")
